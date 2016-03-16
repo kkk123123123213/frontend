@@ -12,6 +12,8 @@
   "bugs": {
     "url": "https://github.com/kplazinski/frontend/issues"
   },
-  "homepage": "https://github.com/kplazinski/frontend#readme"
+  "homepage": "https://github.com/kplazinski/frontend#readme",
+  "dependencies": {
+    "jquery": "^2.2.1"
+  }
 }
- 
