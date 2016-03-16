@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
+	  pkg: grunt.file.readJSON('package.json'),
 	connect: {
     server: {
       options: {
@@ -36,5 +37,10 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', ['connect','watch']);
   grunt.registerTask('default', ['build']);
+  grunt.registerTask('help', 'displays console help', function()
+  {
+	  grunt.log.writeln('Welcome...');
+  });
+  
 
 };
