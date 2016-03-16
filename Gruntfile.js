@@ -27,9 +27,13 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  
+  require('load-grunt-tasks')(grunt, {
+    pattern: 'grunt-contrib-*',
+    config: 'package.json',
+    scope: 'devDependencies',
+    requireResolution: true
+});
+
   grunt.registerTask('build', ['connect','watch']);
   grunt.registerTask('default', ['build']);
 
