@@ -59,12 +59,7 @@ module.exports = function(grunt) {
     });
 
 
-    require('load-grunt-tasks')(grunt, {
-        pattern: 'grunt-contrib-*',
-        config: 'package.json',
-        scope: 'devDependencies',
-        requireResolution: true
-    });
+    require('load-grunt-tasks')(grunt);
 
     grunt.registerTask('build', ['clean', 'copy', 'connect', 'watch']);
     grunt.registerTask('default', ['build']);
