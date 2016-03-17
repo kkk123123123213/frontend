@@ -5,7 +5,7 @@ module.exports = function(grunt) {
                 server: {
                     options: {
                         port: 9001,
-                        base: '<%= cfg.paths.output %>/',
+                        base: ['<%= cfg.paths.output %>/','<%= cfg.paths.bower %>/'],
                         keepalive: false,
                         hostname: '*',
                         open: true,
@@ -14,14 +14,25 @@ module.exports = function(grunt) {
                 }
             },
             watch: {
-                index:
+                dist:
                 {
-                    files: ['<%= cfg.paths.source %>/*.html', '<%= cfg.paths.output %>/*.html'],
+                    files: ['<%= cfg.paths.output %>/*.html'],
                     options: {
-                        hostname: '*',
-                        port: 9002,
+                       //hostname: '*',
+                       // port: 9002,
                         livereload: true
                     }
+
+                },
+                source:
+                {
+                    files: ['<%= cfg.paths.source %>/*.html'],
+                    options: {
+                       // hostname: '*',
+                       // port: 9004,
+                        livereload: true
+                    },
+                    tasks: ['copy']
 
                 },
             }
